@@ -27,7 +27,20 @@ def cirarea():
     print(area)
 
 
+def CtoF():
+    C = float(input("celsius= "))
+    F = (C * 1.8) + 32
+    print(F)
+
+
+def FtoC():
+    F = float(input("Fahrenheit= "))
+    C = (F - 32) * (5/9)
+    print(C)
+
+
 type = input("type: ")
+
 
 if type == "triarea":
     triarea()
@@ -40,3 +53,9 @@ if type == "cirarea":
 
 if type == "recarea":
     recarea()
+
+if type == "C to F":
+    CtoF()
+
+if type == "F to C":
+    FtoC()
