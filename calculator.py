@@ -27,7 +27,6 @@ def cirarea():
     area = math.pi * radius * radius
     print(area)
 
-
 def prime():
     n = int(input("primes till: "))
 
