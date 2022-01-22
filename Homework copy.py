@@ -3,33 +3,33 @@ from functools import reduce
 
 a = []
 num = int(input('How many numbers: '))
-   for n in range(num):
-        numbers = int(input('Enter number '))
-        a.append(numbers)
-total = 0
-   for i in range(0, len(a)):
-        total = total + a[i]
-total2 = sum(a[:])
+for n in range(num):
+    numbers = int(input('Enter number '))
+    a.append(numbers)
+    total = 0
+for i in range(0, len(a)):
+    total = total + a[i]
+    total2 = sum(a[:])
 print(total, total2)
 
 
 c = [1, 2, 3, 4, 5]
 
-   for i in c[:]:
-        i += 1
-        print(int(c[:i]))
+for i in c[:]:
+    i += 1
+    print(int(c[:i]))
 
 a = []
 n = int(input("Enter the number of elements in list:"))
-   for x in range(0, n):
-        element = int(input("Enter element" + str(x+1) + ":"))
-        a.append(element)
+for x in range(0, n):
+    element = int(input("Enter element" + str(x+1) + ":"))
+    a.append(element)
 b = set()
 unique = []
-   for x in a:
-        if x not in b:
-            unique.append(x)
-            b.add(x)
+for x in a:
+    if x not in b:
+        unique.append(x)
+        b.add(x)
 print("Non-duplicate items:")
 print(unique)
 
@@ -109,71 +109,74 @@ math_marks = []
 
 sst_marks = []
 
-   class exam:
-        def english(self):
-            marks = 50
-            roll = int(input("Roll: "))
-            name = input("Name: ")
 
-            english_marks.append(marks)
-            english_marks.append(name)
-            english_marks.append(roll)
+class exam:
+    def english(self):
+        marks = 50
+        roll = int(input("Roll: "))
+        name = input("Name: ")
 
-        def maths(self):
-            marks = 30
-            roll = int(input("Roll: "))
-            name = input("Name: ")
+        english_marks.append(marks)
+        english_marks.append(name)
+        english_marks.append(roll)
 
-            math_marks.append(marks)
-            math_marks.append(name)
-            math_marks.append(roll)
+    def maths(self):
+        marks = 30
+        roll = int(input("Roll: "))
+        name = input("Name: ")
 
-        def sst(self):
-            marks = 40
-            roll = int(input("Roll: "))
-            name = input("Name: ")
+        math_marks.append(marks)
+        math_marks.append(name)
+        math_marks.append(roll)
 
-            sst_marks.append(marks)
-            sst_marks.append(name)
-            sst_marks.append(roll)
+    def sst(self):
+        marks = 40
+        roll = int(input("Roll: "))
+        name = input("Name: ")
+
+        sst_marks.append(marks)
+        sst_marks.append(name)
+        sst_marks.append(roll)
 
 
 exam1 = exam()
 
-   exam1.english()
-    exam1.maths()
-    exam1.sst()
+exam1.english()
+exam1.maths()
+exam1.sst()
 
 print(english_marks, " ", math_marks, " ", sst_marks)
-   def fibonacci(num):
-        num1 = 0
-        num2 = 1
-        series = 0
-        for i in range(num):
-            print(series, end=' ')
-            num1 = num2
-            num2 = series
-            series = num1 + num2
 
-    running function after takking user input
+
+def fibonacci(num):
+    num1 = 0
+    num2 = 1
+    series = 0
+    for i in range(num):
+        print(series, end=' ')
+        num1 = num2
+        num2 = series
+        series = num1 + num2
+
+
 num = int(input('Enter how many numbers needed in Fibonacci series- '))
-   fibonacci(num)
+fibonacci(num)
 
 n = int(input("primes till: "))
-   primes = reduce(lambda r, x: r - set(range(x**2, n, x))
-                    if x in r else r, range(2, int(n**0.5) + 1), set(range(2, n)))
-    print(primes)
+primes = reduce(lambda r, x: r - set(range(x**2, n, x))
+                if x in r else r, range(2, int(n**0.5) + 1), set(range(2, n)))
+print(primes)
 num = []
 prime = []
 
-   for i in range(1, n + 1):
-        num.append(i)
-    for a in num:
-        if num[a-1] / num[a-1] == 1:
-            prime.append(a)
+for i in range(1, n + 1):
+    num.append(i)
+for a in num:
+    if num[a-1] / num[a-1] == 1:
+        prime.append(a)
 
-    print(num)
-    print(prime)
+print(num)
+print(prime)
 
 
 listA = [['Mon', 3, 'Tue', 7, 'Wed', 4], [
