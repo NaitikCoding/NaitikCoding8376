@@ -27,9 +27,9 @@ def cirarea():
     area = math.pi * radius * radius
     print(area)
 
+
 def prime():
     n = int(input("primes till: "))
-    
 
     primes = reduce(lambda r, x: r - set(range(x**2, n, x))
                     if x in r else r, range(2, int(n**0.5) + 1), set(range(2, n)))
@@ -47,6 +47,26 @@ def FtoC():
     F = float(input("Fahrenheit= "))
     C = (F - 32) * (5/9)
     print(C)
+
+
+def sphere_area():
+    radius = int(input("Radius: "))
+    Area = 4 * math.pi * (radius**2)
+    print(Area)
+
+
+def Cube_area():
+    Edge_length = int(input("Edge length: "))
+    Area = 6 * (Edge_length**2)
+    print(Area)
+
+
+def Cuboid_area():
+    l = int(input("length: "))
+    b = int(input("breadth: "))
+    h = int(input("hight: "))
+    Area = (l * b) * h
+    print(Area)
 
 
 type = input("type: ")
@@ -72,3 +92,12 @@ if type == "F to C":
 
 if type == "prime":
     prime()
+
+if type == "sphere area":
+    sphere_area()
+
+if type == "cube area":
+    Cube_area()
+
+if type == "cuboid area":
+    Cuboid_area()
