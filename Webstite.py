@@ -41,9 +41,10 @@ def Logout():
     return redirect(url_for("Login"))
 
 
-@app.route("/Disabled")
+@app.route("/Disabled") 
 def Disabled():
     return render_template("index.html")
+
 
 
 if __name__ == '__main__':
