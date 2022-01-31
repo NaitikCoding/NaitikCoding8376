@@ -1,8 +1,9 @@
 from flask import *
+from datetime import timedelta
 
 app = Flask(__name__)
 app.secret_key = "ABCDEFG"
-
+app.permanent_session_lifetime = timedelta(minutes=5)
 
 @app.route('/')
 def home():
@@ -17,6 +18,7 @@ def homepage():
 @app.route("/Login", methods=['GET', 'POST'])
 def Login():
     if request.method == "POST":
+        session.permanent = True
         user = request.form["nm"]
         session["user"] = user
         return redirect(url_for("User"))
@@ -30,7 +32,7 @@ def Login():
 def User():
     if "user" in session:
         user = session["user"]
-        return f"<h1>{user}<h1>"
+        return render_template("user.html", content="user")
     else:
         return redirect(url_for("Login"))
 
@@ -39,12 +41,6 @@ def User():
 def Logout():
     session.pop("user", None)
     return redirect(url_for("Login"))
-
-
-@app.route("/Disabled") 
-def Disabled():
-    return render_template("index.html")
-
 
 
 if __name__ == '__main__':
